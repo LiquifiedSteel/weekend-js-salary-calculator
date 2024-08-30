@@ -13,6 +13,38 @@ header {
     background-color: #00B2CA;
 }
 
+table {
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #463F3A;
+}
+  table, th, td {
+    border: 1px solid #ff3800;
+    border-collapse: collapse;
+    height: 2.15em;
+    color: #463F3A;
+  }
+  th, td {
+    padding: .5em;
+    min-width: 3.5em;
+    color: #463F3A;
+  }
+  thead {
+    background: #00B2CA;
+    color: #ff3800;
+    color: #463F3A;
+  }
+  tbody tr:nth-child(odd){ 
+    background: #B49FCC;
+    color: #463F3A;
+  }
+  tbody tr:nth-child(even){
+    background: #ff3800;
+    color: #463F3A;
+  }
+
 footer {
     height: 5em;
     color: #463F3A;
