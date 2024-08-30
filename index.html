@@ -10,10 +10,35 @@
     <body>
         <header>
             <h1>Salary Calculator</h1>
+
+            <form id="employeeInfo" onsubmit="collectInfo(event)">
+                <input id="firstNameInput" required type="text" placeholder="First Name">
+                <input id="lastNameInput" required type="text" placeholder="Last Name">
+                <input id="idInput" required type="number" placeholder="ID">
+                <input id="titleInput" required type="text" placeholder="Title">
+                <input id="salaryInput" required type="number" placeholder="Annual Salary">
+                <button>Submit</button>
+            </form>
         </header>
 
         <main>
-            
+            <section>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>ID</th>
+                      <th>Title</th>
+                      <th>Annual Salary</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="affirmationTable">
+                    
+                  </tbody>
+                </table>
+              </section>
         </main>
 
         <footer>
