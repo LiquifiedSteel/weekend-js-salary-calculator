@@ -1,0 +1,22 @@
+body {
+    margin: 0px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #FEFAE0;
+}
+
+header {
+    color: #463F3A;
+    padding: 1em;
+    background-color: #00B2CA;
+}
+
+footer {
+    height: 5em;
+    color: #463F3A;
+    text-align: center;
+    background-color: #00B2CA;
+    padding: 10px;
+}
