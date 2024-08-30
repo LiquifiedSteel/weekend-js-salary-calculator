@@ -1,24 +1,23 @@
 
 
-
-
-
-
-
+let monthlyExpenses = 0; // will be used to track the monthly expenses on employees
 
 
 
 
 function collectInfo(event) {
     event.preventDefault();
+
+    // first we grab references to each of the input fields
     const firstNameElement = document.getElementById('firstNameInput');
     const lastNameElement = document.getElementById('lastNameInput');
     const idElement = document.getElementById('idInput');
     const titleElement = document.getElementById('titleInput');
     const salaryElement = document.getElementById('salaryInput');
 
-    document.getElementById("affirmationTable").innerHTML += `
-    <tr>
+    // here we create each row of the table using the inputs from before as well as adding a delete button
+    document.getElementById("employeeTable").innerHTML += `
+    <tr id="employeeRow">
         <td>
             ${firstNameElement.value}
         </td>
@@ -35,14 +34,29 @@ function collectInfo(event) {
             $${salaryElement.value}
         </td>
         <td>
-            <button class="hover" onclick="deleteElement(event)">❌</button>
+            <button onclick="removeEmployee(event)">❌</button>
         </td>
     </tr>
-    `
+    `;
 
+    monthlyExpenses += salaryElement.value / 12;
+    renderMonthlyExpense();
+
+    // here we reset the input fields
     firstNameElement.value = ``;
     lastNameElement.value = ``;
     idElement.value = ``;
     titleElement.value = ``;
     salaryElement.value = ``;
+}
+
+function removeEmployee(event) {
+    const grabElement = event.target.closest("tr");
+    grabElement.remove();
+}
+
+function renderMonthlyExpense() {
+    const expenseElement = document.getElementById("monthly");
+
+    expenseElement.innerHTML = ` $${monthlyExpenses}`;
 }

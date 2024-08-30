@@ -52,3 +52,16 @@ footer {
     background-color: #00B2CA;
     padding: 10px;
 }
+
+button {
+    background-color: #FEFAE0;
+    color: #ff3800;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+h2 {
+    align-self: flex-end;
+    padding-right: 5%;
+    color: #463F3A;
+}
