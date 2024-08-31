@@ -65,5 +65,7 @@ function renderMonthlyExpense() {
     
     expenseElement.innerHTML = ` $${monthlyExpenses}`;
 
-    
+    if (monthlyExpenses > 20000) {
+        expenseElement.style.backgroundColor = "#FF3800";
+    }
 }
