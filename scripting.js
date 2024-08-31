@@ -1,7 +1,5 @@
 
-
 let monthlyExpenses = 0; // will be used to track the monthly expenses on employees
-
 
 
 function collectInfo(event) {
@@ -50,22 +48,24 @@ function collectInfo(event) {
 }
 
 function removeEmployee(event) {
-    const grabElement = event.target.closest("tr");
-    monthlyExpenses -= document.getElementById("salary").firstChild.nodeValue / 12;
+    const grabElement = event.target.closest("tr"); // grabs the element that is to be removed
+    monthlyExpenses -= document.getElementById("salary").firstChild.nodeValue / 12; // decreases the monthly expenses by the necessary amount based on which employee was removed
     renderMonthlyExpense();
-    grabElement.remove();
-
-   
+    grabElement.remove(); // removes the employee
 }
+
 function renderMonthlyExpense() {
-    const expenseElement = document.getElementById("monthly");
+    const expenseElement = document.getElementById("monthly"); // grabs a reference to the monthly expenses element
 
-    monthlyExpenses = Math.round(monthlyExpenses * 100);
-    monthlyExpenses /= 100;
+    monthlyExpenses = Math.round(monthlyExpenses * 100) / 100; // rounds off the decimal point
     
-    expenseElement.innerHTML = ` $${monthlyExpenses}`;
+    expenseElement.innerHTML = ` $${monthlyExpenses}`; // displays the dollar amount of monthly expenses
 
+
+    // this if else statement makes the background color of the monthly expenses red if over 20000 and white if less
     if (monthlyExpenses > 20000) {
         expenseElement.style.backgroundColor = "#FF3800";
+    } else {
+        expenseElement.style.backgroundColor = "#FEFAE0";
     }
 }
