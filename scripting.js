@@ -28,7 +28,7 @@ function collectInfo(event) {
             ${titleElement.value}
         </td>
         <td>
-            $<span id="salary">${salaryElement.value}<span>
+            ${salaryElement.value}
         </td>
         <td>
             <button onclick="removeEmployee(event)">❌</button>
@@ -49,7 +49,9 @@ function collectInfo(event) {
 
 function removeEmployee(event) {
     const grabElement = event.target.closest("tr"); // grabs the element that is to be removed
-    monthlyExpenses -= document.getElementById("salary").firstChild.nodeValue / 12; // decreases the monthly expenses by the necessary amount based on which employee was removed
+    const salaryElement = event.target.closest("td").previousElementSibling.firstChild.textContent;
+    const salaryAmount = Number(salaryElement);
+    monthlyExpenses -= salaryAmount / 12; // decreases the monthly expenses by the necessary amount based on which employee was removed
     renderMonthlyExpense();
     grabElement.remove(); // removes the employee
 }
